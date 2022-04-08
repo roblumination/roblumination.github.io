@@ -1,5 +1,7 @@
-@import 'animations';
-@import 'colors';
+@use 'animations';
+@use 'colors';
+// @import 'respond';
+// @use 'respond';
 
 body {
     // background-color: black;
@@ -155,6 +157,41 @@ main {
         // overflow: hidden;
         // overflow-x: scroll;
     }
+
+    .map-container{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+        // background-color: #63f;
+
+        .maps-frame {
+            width: 50%;
+            height: 300px;
+            border-radius: 4px;
+            box-sizing: content-box;
+            border: 1px solid #0003;
+            box-shadow: 0 2px 3px #0005;
+            // @include respond (tablet) {
+            //     width: 50%;
+            // }
+            // @include respond (mobile) {
+            //     width: 100%;
+            // }
+        }
+
+        @media (max-width: 715px) {
+            flex-direction: column;
+            .maps-frame {
+                width: 100%;
+            }
+        }
+
+        
+    }
+    
+
+    
 }
 
 footer {

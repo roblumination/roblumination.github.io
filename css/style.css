@@ -146,6 +146,28 @@ main section p {
 main #menu-container {
   flex-direction: row;
 }
+main .map-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+}
+main .map-container .maps-frame {
+  width: 50%;
+  height: 300px;
+  border-radius: 4px;
+  box-sizing: content-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3333333333);
+}
+@media (max-width: 715px) {
+  main .map-container {
+    flex-direction: column;
+  }
+  main .map-container .maps-frame {
+    width: 100%;
+  }
+}
 
 footer {
   background-color: #333;
