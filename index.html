@@ -5,15 +5,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Test landing</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/menu_item.css" />
 		<script src="index.js" defer></script>
 	</head>
 	<body>
 		<header>
 			<div class="header-background"></div>
-			<a href="#menu">Меню</a>
-			<span>Де шукати</span>
-			<span>Про нас</span>
+			<a href="#menu"><p>Меню</p></a>
+			<a href="#place">Де шукати</a>
+			<a href="#about">Про нас</a>
 		</header>
 
 		<div class="top-banner">
@@ -32,10 +33,21 @@
 
 		<main>
 			<section id="menu">
-				<div class="title"><h2>Вибери на свій смак!</h2></div>
+				<div class="title">
+					<h2>
+						Вибери на свій смак!<span
+							id="menu-anchor"
+							class="anchor"
+						></span>
+					</h2>
+				</div>
 				<div class="menu-container">
 					<div class="menu-item-container">
-						<img src="kebab.png" alt="kebab" class="product-ico" />
+						<img
+							src="img/kebab.png"
+							alt="kebab"
+							class="product-ico"
+						/>
 						<div class="item-description">
 							<h3>Легкий кебаб</h3>
 							<p>Для справжніх душечок</p>
@@ -44,7 +56,11 @@
 					</div>
 
 					<div class="menu-item-container">
-						<img src="kebab.png" alt="kebab" class="product-ico" />
+						<img
+							src="img/kebab.png"
+							alt="kebab"
+							class="product-ico"
+						/>
 						<div class="item-description">
 							<h3>Козацький</h3>
 							<p>Тут буде багато цибулі!</p>
@@ -53,7 +69,11 @@
 					</div>
 
 					<div class="menu-item-container">
-						<img src="kebab.png" alt="kebab" class="product-ico" />
+						<img
+							src="img/kebab.png"
+							alt="kebab"
+							class="product-ico"
+						/>
 						<div class="item-description">
 							<h3>Веганський</h3>
 							<p>Ти ж не такий як всі!</p>
@@ -62,7 +82,11 @@
 					</div>
 
 					<div class="menu-item-container">
-						<img src="kebab.png" alt="kebab" class="product-ico" />
+						<img
+							src="img/kebab.png"
+							alt="kebab"
+							class="product-ico"
+						/>
 						<div class="item-description">
 							<h3>Вогник!</h3>
 							<p>Відчуй себе на троні ракетою.</p>
@@ -71,7 +95,11 @@
 					</div>
 
 					<div class="menu-item-container">
-						<img src="kebab.png" alt="kebab" class="product-ico" />
+						<img
+							src="img/kebab.png"
+							alt="kebab"
+							class="product-ico"
+						/>
 						<div class="item-description">
 							<h3>Американський</h3>
 							<p>Майонезу буде ще на цілий салат.</p>
@@ -81,8 +109,10 @@
 				</div>
 			</section>
 
-			<section id="first-section">
-				<div class="title"><h2>Де нас знайти?</h2></div>
+			<section id="place">
+				<div class="title">
+					<h2>Де нас знайти?</h2>
+				</div>
 				<p>
 					Єдиний магазин, де ви можете щось купити, точно знаходиться
 					далеко від вас. Карти вам в допомогу:
@@ -98,11 +128,64 @@
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
 				></iframe>
+				<p>А ще один магазин ось тут:</p>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.2464172864884!2d25.96690059008525!3d70.98118244716039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45c9a93247a0d41f%3A0xf18fff1df4a8a41f!2sNordkapp%20kino!5e0!3m2!1suk!2sua!4v1649455366694!5m2!1suk!2sua"
+					width="100%"
+					height="350"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				></iframe>
 			</section>
 
-			<section id="first-section">
-				<div class="title"><h2>Про нас</h2></div>
-				<p>Ми - магазин швидкого харування "</p>
+			<section id="about">
+				<div class="title">
+					<h2>Про нас</h2>
+				</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Phasellus luctus et augue ac volutpat. Etiam augue libero,
+				tincidunt vitae felis vel, ornare scelerisque risus. Donec ut
+				libero purus. Cras sit amet sodales mauris. Nulla vulputate nec
+				nulla eu sagittis. Aenean placerat dictum accumsan. Cras ante
+				magna, interdum nec dolor et, tempor pellentesque neque.
+				Maecenas efficitur est efficitur dapibus gravida. Proin vitae
+				dolor aliquet, semper elit quis, placerat sapien. Nulla semper
+				ullamcorper risus eget porttitor. Donec eget neque ornare,
+				porttitor ante quis, semper mi. Sed sit amet imperdiet erat, ac
+				posuere sapien. Nam congue lacus nec nunc imperdiet tempus.
+				Praesent tristique varius eros maximus rhoncus. Aliquam
+				fringilla turpis id quam blandit cursus. Aenean quis arcu
+				lobortis, consectetur dui vel, rutrum arcu. Mauris eu felis
+				egestas, mollis sapien a, sagittis sapien. Nulla arcu magna,
+				vehicula vel urna sed, vestibulum euismod erat. Quisque vel
+				ullamcorper metus, sed vulputate metus. Quisque efficitur urna
+				rutrum diam vehicula, vel vestibulum mi dignissim. Nullam
+				tristique dignissim purus eget sagittis. Nullam volutpat vitae
+				ligula nec tempor. Donec eget venenatis ante, eget pharetra
+				erat. Duis nisi arcu, semper at erat at, fringilla imperdiet
+				eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Nulla condimentum mauris odio. Mauris lectus quam, condimentum
+				ut blandit at, iaculis sit amet sem. Nunc non erat molestie,
+				consequat massa vitae, commodo mauris. Phasellus ut venenatis
+				justo, ac sollicitudin magna.
+				<ul>
+					<li>In sit amet malesuada massa.</li>
+					<li>Nullam sed dolor justo.</li>
+					<li>
+						Orci varius natoque penatibus et magnis dis parturient
+						montes, nascetur ridiculus mus.
+					</li>
+					<li>
+						Nulla lacus diam, pellentesque at venenatis vitae,
+						congue ac nulla.
+					</li>
+					<li>
+						Nunc semper, odio nec consectetur vestibulum, nibh nulla
+						tristique mi, sed blandit nisi arcu ac dolor.
+					</li>
+				</ul>
 			</section>
 
 			<section id="second-section">
