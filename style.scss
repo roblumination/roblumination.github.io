@@ -1,19 +1,62 @@
+@import 'animations';
+
 body {
     // background-color: black;
-    margin: 0px;
-    box-sizing: border-box;
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 .top-banner {
-    z-index: -20;
+    display: flex;
+    align-items: flex-end;
+    // z-index: -20;
     background-color: #63f;
     background-image: url('./wall.jpg');
     background-attachment: fixed;
+    background-size:cover;
     height: 100vh;
     width: 100%;
-    position: absolute;
+    // position: absolute;
+    .top-banner-content {
+        height: 50vh;
+    }
+
+    .top-banner-scroll-down {
+        // height: 80px;
+        background: linear-gradient(#0000, #0009);
+        width: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: gradientBlinking 1s infinite ;
+        transition: opacity 0.5s;
+
+
+        .arrow {
+            font-weight: 900;
+        }
+
+        .first-arrow {
+            font-size: 14px;
+            animation: bouncing 1s infinite ;
+        }
+
+        .second-arrow {
+            font-size: 17px;
+            animation: bouncing 1s 80ms infinite ;
+        }
+
+        .third-arrow {
+            font-size: 20px;
+            animation: bouncing 1s 160ms infinite ;
+        }
+    }
 }
 
 header {
@@ -24,15 +67,19 @@ header {
     height: 60px;
     background-color: #0000;
     color: #fff;
-    opacity: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
 
     .header-background {
         position: absolute;
         z-index: -20;
         opacity: 0;
         height: 60px;
-        box-shadow: 0 5px 5px #0003;
-        background-color: #fff;
+        box-shadow: 0 5px 5px #0003, 0 2px 3px #0002;
+        background-color: #fffa;
         width: 100%;
         height: 100%;
         transition: opacity 0.5s;
@@ -42,14 +89,6 @@ header {
 .link-container {
     position: absolute;
     opacity: 1;
-}
-
-
-
-.separator {
-    // background-color: #f003;
-    width: 90%;
-    height: 100vh
 }
 
 .content {
