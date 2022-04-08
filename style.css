@@ -26,7 +26,9 @@
 }
 body {
   font-size: 20px;
+  font-size: clamp(15px, 1.5vw, 20px);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 350px;
 }
 
 * {
@@ -102,21 +104,18 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #eee;
-  height: 200vh;
 }
-main #first-section {
+main section {
   background-color: #fff;
-  height: 300px;
-}
-
-section {
-  width: clamp(300px, 90vw, 1200px);
+  width: clamp(350px, 90vw, 1200px);
   display: flex;
   flex-direction: column;
   padding: 15px;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
-section .title {
+main section .title {
   text-align: center;
   top: 60px;
   position: sticky;
@@ -125,8 +124,75 @@ section .title {
   width: 100%;
   overflow: hidden;
 }
-section p {
+main section p {
   width: 100%;
+}
+main section .menu-container {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+main section .menu-container .menu-item-container {
+  padding: 10px;
+  width: 300px;
+  border-radius: 15px;
+  display: flex;
+  color: #fff;
+  background-color: #333;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3333333333);
+  transition: background 0.5s, transform 0.3s, box-shadow 0.5s;
+}
+@media (max-width: 700px) {
+  main section .menu-container .menu-item-container {
+    width: 100%;
+  }
+  main section .menu-container .menu-item-container .item-description {
+    width: 100%;
+  }
+}
+main section .menu-container .menu-item-container:nth-child(odd) {
+  background-color: #aaa;
+  color: #000;
+}
+main section .menu-container .menu-item-container:hover {
+  transform: translateY(-5px);
+  background-color: #555;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+main section .menu-container .menu-item-container:hover:nth-child(odd) {
+  background-color: #ccc;
+  color: #000;
+}
+main section .menu-container .menu-item-container:hover .product-ico {
+  transform: translateY(-8px) scale(1.1);
+}
+main section .menu-container .menu-item-container:hover .item-description {
+  transform: translateY(-3px);
+}
+main section .menu-container .menu-item-container .product-ico, main section .menu-container .menu-item-container .item-description {
+  transition: transform 0.6s;
+}
+main section .menu-container .menu-item-container .product-ico {
+  width: 100px;
+  object-fit: contain;
+}
+main section .menu-container .menu-item-container .item-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main section .menu-container .menu-item-container .item-description p {
+  flex-grow: 1;
+}
+main section .menu-container .menu-item-container .item-description .price {
+  align-self: flex-end;
+  font-size: 2rem;
+}
+main #menu-container {
+  flex-direction: row;
 }
 
 footer {

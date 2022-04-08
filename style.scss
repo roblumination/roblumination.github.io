@@ -1,9 +1,12 @@
 @import 'animations';
+@import 'colors';
 
 body {
     // background-color: black;
     font-size: 20px;
+    font-size: clamp(15px, 1.5vw, 20px);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 350px;
 }
 
 * {
@@ -89,50 +92,133 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     background-color: #eee;
-    height: 200vh;
-    
-    
+    // height: 250vh;    
 
-    #first-section {
+    section {
         background-color: #fff;
-        height: 300px;
+        width: clamp(350px, 90vw, 1200px);
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+    
+        // border: 1px solid #f00;
+        border-bottom: 1px solid #0003;
+        border-radius: 2px;
+    
+        .title {
+            text-align: center;
+            top: 60px;
+            position: sticky;
+            background-color: #fffa;
+            border-radius: 5px;
+            width: 100%;
+            overflow: hidden;
+        }
+    
+        p {
+            width: 100%;
+        }
+        
+        .menu-container {
+            padding-top: 15px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .menu-item-container {
+                padding: 10px;
+                // min-width: 200px;
+                width: 300px;
+                // width: clamp(250px, 25vw, 350px);
+                // height: clamp(250px, 15vw, 150px);
+                // height: 140px;
+                border-radius: 15px;
+
+                @media (max-width: 700px) {
+                    width: 100%;
+
+                    .item-description {
+                        width: 100%;
+                    }
+                }
+
+                display: flex;
+                color: #fff;
+                background-color: $menu-item-background;
+                box-shadow: 0 3px 5px #0005;
+
+                transition: background 0.5s, transform 0.3s, box-shadow 0.5s;
+
+                &:nth-child(odd) {
+                    background-color: #aaa;
+                    color: #000;
+                }
+
+                &:hover {
+                    transform: translateY(-5px);
+                    background-color: $menu-item-background-hover;
+                    box-shadow: 0 5px 10px #0003;
+
+                    &:nth-child(odd) {
+                        background-color: #ccc;
+                        color: #000;
+                    }
+
+                    .product-ico{
+                    transform: translateY(-8px) scale(1.1);
+                    }
+
+                    .item-description {
+                        transform: translateY(-3px);
+                    }
+                }
+
+                .product-ico, .item-description {
+                    transition: transform 0.6s;
+                }
+
+                .product-ico {
+                    // display: block;
+                    width: 100px;
+                    // filter: contrast(6);
+                    // height: 100px;
+                    // background-size: contain;
+                    object-fit: contain;
+                }
+
+                .item-description {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    p {
+                        flex-grow: 1;
+                    }
+                    .price {
+                        align-self: flex-end;
+                        // background-color: #f00;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        } 
+    }
+
+    #menu-container {
+        // padding: 0px;
+        // display: flex;
+        flex-direction: row;
+        // background-color: #f00;
+        // background-color: #63f;
+        // overflow: hidden;
+        // overflow-x: scroll;
     }
 }
-
-section {
-    // min-width: 400px;
-    // width: 800px;
-    // max-width: 95vw;
-    width: clamp(300px, 90vw, 1200px);
-    // width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    // justify-content: center;
-    align-items: center;
-
-    // margin-top: 15px;
-    // border-radius: 5px;
-    // box-shadow: 0 0 5px #0003;
-    // overflow: hidden;
-
-    .title {
-        text-align: center;
-        top: 60px;
-        position: sticky;
-        background-color: #fffa;
-        border-radius: 5px;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    p {
-        width: 100%;
-    }
-}
-
-
 
 footer {
     background-color: #333;
