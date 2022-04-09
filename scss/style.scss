@@ -1,13 +1,11 @@
 @use 'animations';
-@use 'colors';
-// @import 'respond';
-// @use 'respond';
+@import 'colors';
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800;900&family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap');
 
 body {
-    // background-color: black;
-    font-size: 20px;
     font-size: clamp(15px, 1.5vw, 20px);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Exo 2';
     min-width: 350px;
 }
 
@@ -19,20 +17,20 @@ body {
 .top-banner {
     display: flex;
     align-items: flex-end;
-    // z-index: -20;
-    background-color: #63f;
+    height: 100vh;
+    width: 100%;
+
+    background-color: $bg-top-banner;
     background-image: url('../img/wall.jpg');
     background-attachment: fixed;
     background-size:cover;
-    height: 100vh;
-    width: 100%;
+    
     // position: absolute;
     .top-banner-content {
         height: 50vh;
     }
 
     .top-banner-scroll-down {
-        // height: 80px;
         background: linear-gradient(#0000, #0009);
         width: 100%;
         color: #fff;
@@ -42,22 +40,22 @@ body {
         animation: gradientBlinking 1s infinite ;
         transition: opacity 0.5s;
 
-
-        .arrow {
-            font-weight: 900;
-        }
+        .arrow { font-weight: 500; }
 
         .first-arrow {
+            @extend .arrow;
             font-size: 14px;
             animation: bouncing 1s infinite ;
         }
 
         .second-arrow {
+            @extend .arrow;
             font-size: 17px;
             animation: bouncing 1s 80ms infinite ;
         }
 
         .third-arrow {
+            @extend .arrow;
             font-size: 20px;
             animation: bouncing 1s 160ms infinite ;
         }
@@ -66,44 +64,57 @@ body {
 
 ul{
     li:nth-child(odd) {
-        background-color: #ccc;
+        background-color: #eee;
     }
 }
 
 header {
     position: fixed;
-    z-index: 1000;
     display: flex;
     align-items: center;
     width: 100%;
     height: 60px;
-    background-color: #0000;
-    background: linear-gradient(#fff9, #fff0);
-    color: #000;
-    opacity: 0;
-    transition: opacity 0.5s;
+    z-index: 1000;
 
+    background: linear-gradient(#fff9, #fff0);
+    color: $fg-color;
+    opacity: 0;
+
+    transition: opacity 0.5s;
 
     .header-background {
         position: absolute;
         z-index: -20;
-        opacity: 0;
-        height: 60px;
-        box-shadow: 0 5px 5px #0003, 0 2px 3px #0002;
-        background-color: #fff;
-        width: 100%;
         height: 100%;
-        transition: opacity 0.5s;
+        width: 100%;
+
+        box-shadow: 0 5px 5px #0001, 0 2px 3px #0002;
+        border-bottom: 1px solid #0003;
+        background-color: #fff;
+        opacity: 0;
+
+        transition: opacity 1s;
     }
 
-    &:nth-child(3) {
-        margin-left: 100px;
-    }
+    &:nth-child(3) { margin-left: 100px; }
 
-    a {
-        margin: 10px;
-        color: #000;
-        text-decoration: none;
+    .link-container{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 10px;
+        background-color: #ddd0;
+        transition: background 0.3s;
+
+        &:hover{
+            background-color: #ddd;
+            background: linear-gradient(#ddd, #ddd0);
+        }
+        
+        a {
+            color: #000;
+            text-decoration: none;
+        }
     }
 }
 
@@ -112,90 +123,83 @@ main {
     flex-direction: column;
     align-items: center;
 
-    background-color: #ddd;
+    background-color: #f8f8f8;
     padding-bottom: 15px;
-    // height: 250vh; 
+    color: #333;
 
     section {
-        margin-top: 10px;
         position: relative;
-        background-color: #fff;
-        width: clamp(350px, 90vw, 1200px);
         display: flex;
         flex-direction: column;
-        padding: 15px 15px;
         align-items: center;
-        // color: #fff;
-    
-        // border-bottom: 1px solid #0003;
-        box-shadow: 0 3px 5px #0003, 0 7px 15px #0003;
+        width: clamp(350px, 90vw, 1200px);
+        margin-top: 10px;
+        padding: 30px;
+
+        background-color: #fff;
+        box-shadow: 0 3px 5px #0002, 0 7px 15px #0001;
+        border: 1px solid #0002;
         border-radius: 5px;
+
+        @media (max-width: 715px) {
+            width: 100%;
+            margin-top: 3px;
+            box-shadow: 0 3px 5px #0003;
+            padding: 15px 15px;
+        }
     
         .title {
-            text-align: center;
-            top: 60px;
             position: sticky;
-            background-color: #fffa;
-            border-radius: 5px;
+            top: 60px;
             width: 100%;
             overflow: hidden;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #fffa;
         }
     
-        p {
-            width: 100%;
-        }
-        
-        
+        p { width: 100%; }
     }
 
-    #menu-container {
-        // padding: 0px;
-        // display: flex;
-        flex-direction: row;
-        // background-color: #f00;
-        // background-color: #63f;
-        // overflow: hidden;
-        // overflow-x: scroll;
-    }
+    #menu-container { flex-direction: row; }
 
     .map-container{
         display: flex;
         flex-direction: row;
         gap: 15px;
         width: 100%;
-        // background-color: #63f;
 
         .maps-frame {
             width: 50%;
             height: 300px;
             border-radius: 4px;
             box-sizing: content-box;
+
             border: 1px solid #0003;
             box-shadow: 0 2px 3px #0005;
-            // @include respond (tablet) {
-            //     width: 50%;
-            // }
-            // @include respond (mobile) {
-            //     width: 100%;
-            // }
         }
 
         @media (max-width: 715px) {
             flex-direction: column;
-            .maps-frame {
-                width: 100%;
-            }
+            .maps-frame { width: 100%; }
         }
-
-        
     }
-    
-
-    
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    height: 200px;
+
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .sponsor {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 715px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800;900&family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap");
 @keyframes bouncing {
   0%, 30% {
     transform: translateY(0px);
@@ -25,9 +26,8 @@
   }
 }
 body {
-  font-size: 20px;
   font-size: clamp(15px, 1.5vw, 20px);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Exo 2";
   min-width: 350px;
 }
 
@@ -39,12 +39,12 @@ body {
 .top-banner {
   display: flex;
   align-items: flex-end;
-  background-color: #63f;
+  height: 100vh;
+  width: 100%;
+  background-color: #666;
   background-image: url("../img/wall.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
 }
 .top-banner .top-banner-content {
   height: 50vh;
@@ -59,8 +59,8 @@ body {
   animation: gradientBlinking 1s infinite;
   transition: opacity 0.5s;
 }
-.top-banner .top-banner-scroll-down .arrow {
-  font-weight: 900;
+.top-banner .top-banner-scroll-down .arrow, .top-banner .top-banner-scroll-down .third-arrow, .top-banner .top-banner-scroll-down .second-arrow, .top-banner .top-banner-scroll-down .first-arrow {
+  font-weight: 500;
 }
 .top-banner .top-banner-scroll-down .first-arrow {
   font-size: 14px;
@@ -76,38 +76,48 @@ body {
 }
 
 ul li:nth-child(odd) {
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 header {
   position: fixed;
-  z-index: 1000;
   display: flex;
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
-  color: #000;
+  color: #333;
   opacity: 0;
   transition: opacity 0.5s;
 }
 header .header-background {
   position: absolute;
   z-index: -20;
-  opacity: 0;
-  height: 60px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.1333333333);
-  background-color: #fff;
-  width: 100%;
   height: 100%;
-  transition: opacity 0.5s;
+  width: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.0666666667), 0 2px 3px rgba(0, 0, 0, 0.1333333333);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 1s;
 }
 header:nth-child(3) {
   margin-left: 100px;
 }
-header a {
-  margin: 10px;
+header .link-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(221, 221, 221, 0);
+  transition: background 0.3s;
+}
+header .link-container:hover {
+  background-color: #ddd;
+  background: linear-gradient(#ddd, rgba(221, 221, 221, 0));
+}
+header .link-container a {
   color: #000;
   text-decoration: none;
 }
@@ -116,29 +126,39 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ddd;
+  background-color: #f8f8f8;
   padding-bottom: 15px;
+  color: #333;
 }
 main section {
-  margin-top: 10px;
   position: relative;
-  background-color: #fff;
-  width: clamp(350px, 90vw, 1200px);
   display: flex;
   flex-direction: column;
-  padding: 15px 15px;
   align-items: center;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 7px 15px rgba(0, 0, 0, 0.2);
+  width: clamp(350px, 90vw, 1200px);
+  margin-top: 10px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1333333333), 0 7px 15px rgba(0, 0, 0, 0.0666666667);
+  border: 1px solid rgba(0, 0, 0, 0.1333333333);
   border-radius: 5px;
 }
+@media (max-width: 715px) {
+  main section {
+    width: 100%;
+    margin-top: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px 15px;
+  }
+}
 main section .title {
-  text-align: center;
-  top: 60px;
   position: sticky;
-  background-color: rgba(255, 255, 255, 0.6666666667);
-  border-radius: 5px;
+  top: 60px;
   width: 100%;
   overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6666666667);
 }
 main section p {
   width: 100%;
@@ -172,7 +192,19 @@ main .map-container .maps-frame {
 footer {
   background-color: #333;
   color: #fff;
-  height: 200px;
+}
+footer .grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+footer .grid-wrapper .sponsor {
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media (max-width: 715px) {
+  footer .grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
