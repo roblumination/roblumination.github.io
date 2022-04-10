@@ -1,3 +1,43 @@
-
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  background: linear-gradient(#000, rgba(0, 0, 0, 0));
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+header .header-background {
+  position: absolute;
+  z-index: -20;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.0666666667), 0 2px 3px rgba(0, 0, 0, 0.1333333333);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #42352c;
+  opacity: 0;
+  transition: opacity 1s;
+}
+header:nth-child(3) {
+  margin-left: 100px;
+}
+header .link-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(221, 221, 221, 0);
+  transition: background 0.3s;
+}
+header .link-container:hover {
+  background: linear-gradient(#614e40, rgba(66, 53, 44, 0));
+}
+header .link-container a {
+  color: #fff;
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=header.css.map */
