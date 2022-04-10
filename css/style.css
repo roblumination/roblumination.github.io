@@ -25,6 +25,14 @@
     opacity: 0;
   }
 }
+@keyframes background-slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 500px 0%;
+  }
+}
 body {
   font-size: clamp(15px, 1.5vw, 20px);
   font-family: "Exo 2";
@@ -86,7 +94,7 @@ header {
   width: 100%;
   height: 60px;
   z-index: 1000;
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  background: linear-gradient(#000, rgba(0, 0, 0, 0));
   color: #333;
   opacity: 0;
   transition: opacity 0.5s;
@@ -98,7 +106,7 @@ header .header-background {
   width: 100%;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.0666666667), 0 2px 3px rgba(0, 0, 0, 0.1333333333);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  background-color: #8c2323;
   opacity: 0;
   transition: opacity 1s;
 }
@@ -114,11 +122,10 @@ header .link-container {
   transition: background 0.3s;
 }
 header .link-container:hover {
-  background-color: #ddd;
-  background: linear-gradient(#ddd, rgba(221, 221, 221, 0));
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
 }
 header .link-container a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -129,6 +136,23 @@ main {
   background-color: #f8f8f8;
   padding-bottom: 15px;
   color: #333;
+}
+main #menu {
+  background-image: url(../img/pattern3.webp);
+  background-repeat: repeat;
+  animation: background-slide 40s linear infinite;
+  perspective: 10px;
+  perspective-origin: 50%;
+}
+main #menu .title {
+  background-color: rgba(51, 51, 51, 0.6);
+  color: #fff;
+}
+main #menu .slider-background {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 main section {
   position: relative;
@@ -146,8 +170,9 @@ main section {
 @media (max-width: 715px) {
   main section {
     width: 100%;
-    margin-top: 3px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+    border-radius: 0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     padding: 15px 15px;
   }
 }
@@ -162,9 +187,6 @@ main section .title {
 }
 main section p {
   width: 100%;
-}
-main #menu-container {
-  flex-direction: row;
 }
 main .map-container {
   display: flex;
@@ -187,6 +209,18 @@ main .map-container .maps-frame {
   main .map-container .maps-frame {
     width: 100%;
   }
+}
+main .top-darkening-container, main .top-darkening-container-img {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-image: url(../img/pattern4-br.webp);
+  background-attachment: fixed;
+}
+main .top-darkening-container-img {
+  background-image: none;
+  background: linear-gradient(rgba(248, 248, 248, 0) 0% 30%, #f8f8f8);
+  z-index: 0;
 }
 
 footer {

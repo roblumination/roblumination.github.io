@@ -19,7 +19,7 @@
   transition: background 0.5s, transform 0.3s, box-shadow 0.5s;
 }
 .menu-item-container:nth-child(1) {
-  background: linear-gradient(45deg, #6eb1ff, rgb(192, 59, 179));
+  background: linear-gradient(45deg, #6eb1ff, #c03bb3);
 }
 .menu-item-container:nth-child(2) {
   background: linear-gradient(45deg, rgb(202, 84, 0), rgb(225, 169, 28));
@@ -54,6 +54,7 @@
   object-fit: contain;
 }
 .menu-item-container .item-description {
+  user-select: none;
   display: flex;
   flex-direction: column;
   width: 100%;
