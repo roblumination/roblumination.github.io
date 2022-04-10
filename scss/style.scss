@@ -84,6 +84,7 @@ main {
         animation:  background-slide 40s linear infinite;
         perspective: 10px;
         perspective-origin: 50%;
+        border: 2px solid #000;
 
         .title {
             background-color: #3339;
