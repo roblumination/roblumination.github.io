@@ -134,13 +134,18 @@ main section .title {
   position: sticky;
   top: 60px;
   width: 100%;
-  overflow: hidden;
   text-align: center;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.6666666667);
 }
 main section p {
   width: 100%;
+}
+main section #place-anchor, main section #menu-anchor, main section #about-anchor {
+  position: absolute;
+  background-color: #000;
+  transform: translateY(-70px);
+  opacity: 0;
 }
 main .map-container {
   display: flex;
