@@ -9,7 +9,7 @@ header {
     z-index: 1000;
 
     background: linear-gradient(#000, #0000);
-    color: $fg-color;
+    color: $fg-color-menu;
     opacity: 0;
 
     transition: opacity 0.5s;
@@ -28,7 +28,15 @@ header {
         transition: opacity 1s;
     }
 
-    &:nth-child(3) { margin-left: 100px; }
+    // &:nth-child(2) { margin-left: 100px; }
+    .logo {
+        // margin-left: 10px;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+        // background-color: #f00;
+    }
 
     .link-container{
         display: flex;

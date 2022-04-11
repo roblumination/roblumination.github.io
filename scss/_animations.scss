@@ -15,22 +15,12 @@
 }
 
 @keyframes blinking {
-    0%, 30% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+    0%, 30% { opacity: 0; }
+    50%     { opacity: 1; }
+    100%    { opacity: 0; }
 }
 
 @keyframes background-slide {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 500px 0%;
-    }
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 500px 0%; }
 }

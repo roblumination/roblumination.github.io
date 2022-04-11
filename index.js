@@ -14,7 +14,7 @@ function isScrollNearContent(pxFromBottom) {
 
 document.addEventListener("scroll", (e) => {
 	headerBackground.style.opacity = isScrollNearContent(300) ? 1 : 0;
-	header.style.color = isScrollNearContent(300) ? "#000" : "#fff";
+	// header.style.color = isScrollNearContent(300) ? "#000" : "#fff";
 	header.style.opacity = isNeedToHideHeader ? 0 : 1;
 	if (isScrollNearContent(300)) {
 		isNeedToHideHeader = false;

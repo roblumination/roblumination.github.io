@@ -6,7 +6,7 @@ header {
   height: 60px;
   z-index: 1000;
   background: linear-gradient(#000, rgba(0, 0, 0, 0));
-  color: #333;
+  color: #fff;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -21,8 +21,11 @@ header .header-background {
   opacity: 0;
   transition: opacity 1s;
 }
-header:nth-child(3) {
-  margin-left: 100px;
+header .logo {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
 }
 header .link-container {
   display: flex;
