@@ -81,6 +81,7 @@ body {
 .top-banner .top-banner-scroll-down .third-arrow {
   font-size: 20px;
   animation: bouncing 1s 160ms infinite;
+  margin-bottom: 20px;
 }
 
 ul li:nth-child(odd) {
