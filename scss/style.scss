@@ -175,12 +175,19 @@ main {
         // box-shadow: inset 0px 1px 2px #fff3;
         border-top: 2px solid #000; 
     }
+
     .top-darkening-container-img {
         @extend .top-darkening-container;
         background-image: none;
         background: linear-gradient(rgba($bg-submain, 0) 0% 30%, $bg-submain);
         z-index: 0;
     }
+}
+
+video {
+    width: clamp(300px, 60vw, 600px);
+    border: 3px solid #3333;
+    border-radius: 3px;
 }
 
 .transition {
