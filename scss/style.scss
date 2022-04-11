@@ -191,9 +191,21 @@ main {
 }
 
 footer {
-    padding: 15px;
     background-color: #333;
     color: #fff;
+
+    .container-first {
+        padding: 5px;
+    }
+
+    .container-last {
+        @extend .container-first;
+        background-color: #282828;
+    }
+
+    .last-container {
+        background-color: #000;
+    }
 
     .grid-wrapper {
         display: grid;

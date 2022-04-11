@@ -192,9 +192,17 @@ main .top-darkening-container-img {
 }
 
 footer {
-  padding: 15px;
   background-color: #333;
   color: #fff;
+}
+footer .container-first, footer .container-last {
+  padding: 5px;
+}
+footer .container-last {
+  background-color: #282828;
+}
+footer .last-container {
+  background-color: #000;
 }
 footer .grid-wrapper {
   display: grid;
